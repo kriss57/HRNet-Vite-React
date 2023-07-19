@@ -1,0 +1,38 @@
+#employee-table {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  width: 1100px;
+}
+#employee-div {
+  display: flex;
+  width: 1100px;
+  justify-content: space-between;
+}
+
+/* #employee-table th,
+#employee-table tr {
+  border: 1px solid greenyellow;
+} */
+
+tbody {
+  width: 100%;
+}
+tr {
+  width: 100px;
+  border-bottom: 1px solid greenyellow;
+}
+
+th,
+td {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+}
+.header-table {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
