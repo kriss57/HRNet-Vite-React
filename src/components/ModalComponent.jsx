@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 
+import PropTypes from "prop-types";
 import Modal from "my-modal-test";
+import { useNavigate } from "react-router-dom";
 
-const ModalComponent = () => {
+const ModalComponent = ({ onSave }) => {
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleFirstBtnClick = () => {
     // Provide the logic you want to perform here
@@ -17,12 +20,16 @@ const ModalComponent = () => {
   const handleSecondBtnClick = () => {
     // Provide the validation logic you want to perform here
     // for example, an alert box to indicate successful validation
-    alert("Validation successful!");
+    // alert("Validation successful!");
+    onSave();
+    navigate("/employee-list");
   };
 
   return (
     <>
-      <button onClick={() => setShowModal(true)}>open modal</button>
+      <button className="btModal" onClick={() => setShowModal(true)}>
+        Save
+      </button>
 
       {showModal &&
         createPortal(
@@ -30,7 +37,7 @@ const ModalComponent = () => {
             closeModal={() => setShowModal(false)} // Callback function to close the modal
             theme="validation" // Theme of the modal ('validation', 'success', 'success-dark', 'alert', 'error')
             //title="Title" // Title of the modal // Optional ! //
-            textContent="Employee Created !" // Text content of the modal
+            textContent="Employee created!" // Text content of the modal
             modalSize="modal-medium" // Size of the modal ('modal-large' in this case)
             miniBtnActive={true} // Flag indicating whether the mini button is active // true or false
             FirstBtnActive={{
@@ -46,6 +53,10 @@ const ModalComponent = () => {
         )}
     </>
   );
+};
+
+ModalComponent.propTypes = {
+  onSave: PropTypes.func.isRequired,
 };
 
 export default ModalComponent;

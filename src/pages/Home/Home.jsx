@@ -4,10 +4,12 @@ import { useState } from "react";
 
 import "./home.css";
 import ModalComponent from "../../components/ModalComponent";
-import DatePickerComponent from "../../components/DatePickerComponent"
+import DatePickerComponent from "../../components/DatePickerComponent";
 
-import dayjs from 'dayjs';
-import Dropdown from "../../components/Dropdown"
+import dayjs from "dayjs";
+import Dropdown from "../../components/Dropdown";
+import StateComponent from "../../components/StateComponent";
+import ZipCode from "../../components/ZipCode";
 
 const Home = () => {
   const employee = {
@@ -37,33 +39,56 @@ const Home = () => {
       type: "employee/addEmployee",
       payload: formData,
     });
-    alert("Employee Created");
+
     setFormData(employee);
   };
 
   return (
     <>
-      <div className="title">
+      <header className="title">
         <h1>HRnet</h1>
-      </div>
-      <div className="container">
-        <Link to="/employee-list">View Current Employees</Link>
+      </header>
+
+      <main className="container">
+        <nav>
+          <Link to="/employee-list">View Current Employees</Link>
+        </nav>
+
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
-          <label htmlFor="firstName">First Name</label>
-          <input onChange={handleChange} type="text" id="firstName" />
+          <section className="infoUserContainer">
+            <label htmlFor="firstName">First Name</label>
+            <input onChange={handleChange} type="text" id="firstName" />
 
-          <label htmlFor="lastName">Last Name</label>
-          <input onChange={handleChange} type="text" id="lastName" />
+            <label htmlFor="lastName">Last Name</label>
+            <input onChange={handleChange} type="text" id="lastName" />
 
-          <label htmlFor="dateOfBirth">Date of Birth</label>
-          <DatePickerComponent  onChange={(date) => handleChange({ target: { id: 'dateOfBirth', value: dayjs(date).toISOString() } })} />
-          {/* <input onChange={handleChange} id="dateOfBirth" type="text" /> */}
+            <label htmlFor="dateOfBirth">Date of Birth</label>
+            <DatePickerComponent
+              onChange={(date) =>
+                handleChange({
+                  target: {
+                    id: "dateOfBirth",
+                    value: dayjs(date).toISOString(),
+                  },
+                })
+              }
+            />
 
-          
-          <label htmlFor="startDate">Start Date</label>
-          <input onChange={handleChange} id="startDate" type="text" />
-
+            <label htmlFor="startDate">Start Date</label>
+            <DatePickerComponent
+              onChange={(date) =>
+                handleChange({
+                  target: { id: "startDate", value: dayjs(date).toISOString() },
+                })
+              }
+            />
+            <Dropdown
+              onChange={(select) =>
+                handleChange({ target: { id: "department", value: select } })
+              }
+            />
+          </section>
           <fieldset className="address">
             <legend>Address</legend>
 
@@ -73,29 +98,24 @@ const Home = () => {
             <label htmlFor="city">City</label>
             <input onChange={handleChange} id="city" type="text" />
 
-            
             <label htmlFor="state">State</label>
-            <select onChange={handleChange} name="state" id="state"></select>
-
-            <label htmlFor="ziCode">Zip Code</label>
-            <input onChange={handleChange} id="zipCode" type="number" />
+            <StateComponent
+              onChange={(select) =>
+                handleChange({ target: { id: "state", value: select } })
+              }
+            />
+            <ZipCode
+              onChange={(select) =>
+                handleChange({ target: { id: "zipCode", value: select } })
+              }
+            />
           </fieldset>
-
-            <Dropdown/>
-          {/* <label htmlFor="department">Department</label>
-          <select onChange={handleChange} name="department" id="department">
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
-          </select> */}
         </form>
-
-        <button onClick={handleSave}>Save</button>
-        <ModalComponent />
-        
-      </div>
+        <ModalComponent onSave={handleSave} />
+      </main>
+      <footer>
+        <p>&copy; {new Date().getFullYear()} HRnet. Tous droits réservés.</p>
+      </footer>
     </>
   );
 };

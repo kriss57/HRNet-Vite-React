@@ -4,14 +4,27 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgb(125, 202, 235);
+  background-color: rgb(34, 35, 36);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+/* Style additionnel pour empêcher le footer de se superposer au contenu */
+body {
+  margin-bottom: 60px; /* Ajustez cette valeur selon la hauteur de votre footer */
+}
+/* Style de base pour le footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 a {
@@ -21,7 +34,9 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  color: #535bf2;
+  text-shadow: 0px 0px 15px rgba(125, 202, 235); /* Ajout de l'ombre au survol */
+
+  color: rgb(125, 202, 235);
 }
 
 body {
@@ -31,29 +46,43 @@ body {
 }
 
 h1 {
-  font-size: 2.2em;
-  line-height: 1.1;
+  font-size: 3.2em;
+  line-height: 1.5;
   margin-bottom: 5px;
+  background-color: #c9d0f3e7;
+}
+h2 {
+  color: #c9d0f3e7;
+}
+.title {
+  color: rgb(52, 53, 57);
 }
 
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+.btModal {
+  background-color: #c9d0f3e7;
+  color: #000000;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  width: 100px;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-} */
-/* button:hover {
-  border-color: #646cff;
+  transition: box-shadow 0.25s, background-color 0.25s;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
+
+.btModal:hover {
+  box-shadow: 0px 0px 15px rgba(125, 202, 235); /* Ajout de l'ombre au survol */
+  background-color: #f0f0f0;
+  border-color: rgb(125, 202, 235);
+}
+
+.btModal:focus,
+.btModal:focus-visible {
+  outline: none;
+  border-color: #1b1b1c64;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -61,7 +90,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: rgb(125, 202, 235);
   }
   button {
     background-color: #f9f9f9;

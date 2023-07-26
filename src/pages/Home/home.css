@@ -3,19 +3,30 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 1200px;
   height: 100%;
+  margin-top: 50px;
+}
+.infoUserContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 #create-employee {
   display: flex;
-  flex-direction: column;
+  z-index: 0;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 80%;
 }
 input {
-  max-width: 200px;
+  height: 40px;
+  width: 300px;
   margin-bottom: 12px;
 }
 label {
   text-align: start;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 select {
   max-width: 250px;
@@ -27,4 +38,39 @@ select {
   flex-direction: column;
   width: 300px;
   margin-bottom: 12px;
+}
+
+.close-button-success {
+  color: black;
+}
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 600px;
+  }
+  .infoUserContainer {
+    margin-bottom: 30px;
+  }
+  #create-employee {
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
+
+  input,
+  select {
+    max-width: 300px;
+  }
+
+  .address {
+    max-width: 300px;
+  }
+}
+
+@media screen and (man-width: 600px) {
+  .container {
+    padding: 0 40px;
+  }
+  .infoUserContainer {
+    align-items: center;
+  }
 }
