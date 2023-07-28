@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <>
       <header className="title">
-        <h1>HRnet</h1>
+        <h1 className="title-txt">HRnet</h1>
       </header>
 
       <main className="container">
@@ -57,11 +57,25 @@ const Home = () => {
         <h2>Create Employee</h2>
         <form action="#" id="create-employee">
           <section className="infoUserContainer">
-            <label htmlFor="firstName">First Name</label>
-            <input onChange={handleChange} type="text" id="firstName" />
+            <label htmlFor="firstName" id="firstNameLabel">
+              First Name
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              id="firstName"
+              aria-labelledby="firstNameLabel"
+            />
 
-            <label htmlFor="lastName">Last Name</label>
-            <input onChange={handleChange} type="text" id="lastName" />
+            <label htmlFor="lastName" id="lastNameLabel">
+              Last Name
+            </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              id="lastName"
+              aria-labelledby="lastNameLabel"
+            />
 
             <label htmlFor="dateOfBirth">Date of Birth</label>
             <DatePickerComponent
@@ -92,11 +106,25 @@ const Home = () => {
           <fieldset className="address">
             <legend>Address</legend>
 
-            <label htmlFor="street">Street</label>
-            <input onChange={handleChange} id="street" type="text" />
+            <label htmlFor="street" id="streetLabel">
+              Street
+            </label>
+            <input
+              onChange={handleChange}
+              id="street"
+              type="text"
+              aria-labelledby="streetLabel"
+            />
 
-            <label htmlFor="city">City</label>
-            <input onChange={handleChange} id="city" type="text" />
+            <label htmlFor="city" id="cityLabel">
+              City
+            </label>
+            <input
+              onChange={handleChange}
+              id="city"
+              type="text"
+              aria-labelledby="cityLabel"
+            />
 
             <label htmlFor="state">State</label>
             <StateComponent

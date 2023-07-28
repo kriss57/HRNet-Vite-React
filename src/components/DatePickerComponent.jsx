@@ -13,7 +13,7 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "rgb(125, 202, 235)", // Couleur du contour en rouge lorsque l'input est en focus
+            borderColor: "rgb(125, 202, 235)",
           },
         },
       },
@@ -22,10 +22,7 @@ const customTheme = createTheme({
 });
 
 const DatePickerComponent = ({ onChange }) => {
-  //const [selectedDate, setSelectedDate] = useState(null);
-
   const handleDateChange = (date) => {
-    //setSelectedDate(date);
     onChange(date);
   };
 

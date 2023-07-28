@@ -4,11 +4,20 @@ import TableComponent from "../../components/TableComponent";
 
 const EmployeeList = () => {
   return (
-    <div id="employee-div" className="container">
-      <h1>Current Employees</h1>
-      <TableComponent />
-      <Link to="/home">Home</Link>
-    </div>
+    <>
+      <header className="title-emp">
+        <h1 className="title-txt-emp">Current Employees</h1>
+      </header>
+      <main id="employee-div" className="container">
+        <TableComponent />
+      </main>
+      <nav style={{ marginTop: "35px" }}>
+        <Link to="/home">Home</Link>
+      </nav>
+      <footer>
+        <p>&copy; {new Date().getFullYear()} HRnet. Tous droits réservés.</p>
+      </footer>
+    </>
   );
 };
 

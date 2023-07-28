@@ -17,7 +17,7 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "rgb(125, 202, 235)", // Couleur du contour en rouge lorsque l'input est en focus
+            borderColor: "rgb(125, 202, 235)",
           },
         },
       },
@@ -26,7 +26,7 @@ const customTheme = createTheme({
       styleOverrides: {
         root: {
           "&.Mui-focused": {
-            color: "#646cff", // Couleur du texte en rouge lorsque l'input est en focus
+            color: "#646cff",
           },
         },
       },

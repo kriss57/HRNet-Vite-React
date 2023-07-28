@@ -13,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+input {
+  background-color: #fff;
+  color: #000;
+}
 /* Style additionnel pour empêcher le footer de se superposer au contenu */
 body {
   margin-bottom: 60px; /* Ajustez cette valeur selon la hauteur de votre footer */
@@ -45,11 +49,14 @@ body {
   justify-content: center;
 }
 
-h1 {
+.title-txt {
+  width: 200px;
+  text-align: center;
+  border-radius: 200px;
   font-size: 3.2em;
   line-height: 1.5;
   margin-bottom: 5px;
-  background-color: #c9d0f3e7;
+  background-color: rgb(125, 202, 235);
 }
 h2 {
   color: #c9d0f3e7;
@@ -59,7 +66,7 @@ h2 {
 }
 
 .btModal {
-  background-color: #c9d0f3e7;
+  background-color: rgb(125, 202, 235);
   color: #000000;
   border-radius: 4px;
   border: 2px solid transparent;
@@ -94,5 +101,10 @@ h2 {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+@media screen and (max-width: 1200px) {
+  footer {
+    position: static;
   }
 }

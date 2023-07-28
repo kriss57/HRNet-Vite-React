@@ -7,6 +7,10 @@
   height: 100%;
   margin-top: 50px;
 }
+.title {
+  display: flex;
+  justify-content: center;
+}
 .infoUserContainer {
   display: flex;
   flex-direction: column;
@@ -43,6 +47,7 @@ select {
 .close-button-success {
   color: black;
 }
+
 /* Responsive */
 @media screen and (max-width: 1200px) {
   .container {
@@ -64,13 +69,28 @@ select {
   .address {
     max-width: 300px;
   }
+  footer {
+    position: sticky;
+  }
 }
 
-@media screen and (man-width: 600px) {
+@media screen and (max-width: 600px) {
   .container {
-    padding: 0 40px;
+    max-width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
   }
   .infoUserContainer {
-    align-items: center;
+    width: 100%;
+  }
+
+  input,
+  select {
+    margin: 0 auto;
+  }
+
+  .address {
+    max-width: 100%;
   }
 }
